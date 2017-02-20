@@ -1,0 +1,82 @@
+.Content {
+  &__backgrounds,
+  &__background {
+    height: 50vh;
+    position: fixed;
+    width: 100%;
+  }
+
+  &__backgrounds {
+    z-index: -1;
+  }
+
+  &__background {
+    background: lightgray;
+  }
+
+  &__sections {
+    box-sizing: content-box;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 1em;
+  }
+ 
+  h1 {
+    color: rgba(#d6d, .9);
+    font-family: 'Arial Black', sans-serif;
+    font-size: 4em;
+    font-size: 8vmin;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: -.05em;
+  }
+
+  &__section {
+    &:first-child {
+      h1 {
+        font-size: 6em;
+        font-size: 15vmin;
+      }
+    }
+
+    &:last-child {
+      p {
+        height: 50vh;
+      }
+    }
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 50vh;
+    line-height: .79;
+    margin: 0;
+  }
+
+  p {
+    font-family: serif;
+    font-size: 1.5em;
+    height: 25vh;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 1024px;
+    padding-top: 2em;
+
+    span {
+      background: rgba(#fff, .9);
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@media (max-width: 640px) {
+  .Content {
+    p {
+      font-size: 16px;
+    }
+  }
+}

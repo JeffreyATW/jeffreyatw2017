@@ -1,0 +1,19 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  position: fixed;
+  width: 100%;
+
+  &__heading,
+  &__links {
+    margin: 0;
+  }
+
+  &__links {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+}
