@@ -1,23 +1,55 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import Backgrounds from '../Backgrounds/Backgrounds';
+import smoothScroll from 'smoothscroll';
+import longArrowDown from '../../images/svg/long-arrow-down.svg';
+import { sections } from '../../constants';
+import 'waypoints/lib/noframework.waypoints.js';
 import './Content.scss';
 
 class Content extends Component {
-  static sections = [
-    'intro',
-    'sites',
-    'css',
-    'opinionated',
-    'teaching',
-    'showcase'
-  ];
+  static propTypes = {
+    currentSection: PropTypes.number.isRequired,
+    setSection: PropTypes.func.isRequired
+  };
+
+  componentDidMount() {
+    sections.forEach((section, i) => {
+      const element = document.querySelector(`.Content__section--${section}`);
+
+      new window.Waypoint({
+        element,
+        handler: (direction) => {
+          if (direction === 'down') {
+            this.props.setSection(i);
+          }
+        },
+        offset: 100
+      });
+
+      new window.Waypoint({
+        element,
+        handler: (direction) => {
+          if (direction === 'up') {
+            this.props.setSection(i);
+          }
+        },
+        offset: -200
+      });
+    });
+  }
+
+  goToSection = section => (event) => {
+    event.preventDefault();
+    smoothScroll(document.querySelector(`.Content__section--${section}`));
+  };
 
   render() {
+    const { currentSection } = this.props;
+    
     return (
       <main className="Content">
         <div className="Content__backgrounds">
-          {Content.sections.map((section, i) => (
-            <div className={`Content__background Content__background--${section}`} key={i} />
-          ))}
+          <Backgrounds currentSection={currentSection} />
         </div>
         <div className="Content__sections">
           <section className="Content__section Content__section--intro">
@@ -31,6 +63,7 @@ class Content extends Component {
                 on the front-end side of things. I've been making websites since 1994,
                 and I've always worked hard to stay on the cutting edge.
               </span>
+              <a href="#sites" onClick={this.goToSection('sites')}><img className="Content__skipper" role="presentation" src={longArrowDown} /></a>
             </p>
           </section>
           <section className="Content__section Content__section--sites">
@@ -44,6 +77,7 @@ class Content extends Component {
                 design game on point, as I am building performant single-page apps comprising
                 thousands of components. If it's web-based, I'm on it.
               </span>
+              <a href="#css" onClick={this.goToSection('css')}><img className="Content__skipper" role="presentation" src={longArrowDown} /></a>
             </p>
           </section>
           <section className="Content__section Content__section--css">
@@ -58,6 +92,7 @@ class Content extends Component {
                 guess I'm in the minority of people who do! (The trick is to stick to
                 object-oriented naming conventions and use CSS processors.)
               </span>
+              <a href="#opinionated" onClick={this.goToSection('opinionated')}><img className="Content__skipper" role="presentation" src={longArrowDown} /></a>
             </p>
           </section>
           <section className="Content__section Content__section--opinionated">
@@ -73,6 +108,7 @@ class Content extends Component {
                 &ldquo;sub-optimal&rdquo;. I'm all about doing good work, as correctly as
                 possible, without sacrificing velocity.
               </span>
+              <a href="#teaching" onClick={this.goToSection('teaching')}><img className="Content__skipper" role="presentation" src={longArrowDown} /></a>
             </p>
           </section>
           <section className="Content__section Content__section--teaching">
@@ -91,6 +127,7 @@ class Content extends Component {
                 own work, I make sure that my clients and coworkers are on the same page,
                 whether it's during a simple pull request, or a project sign-off.
               </span>
+              <a href="#showcase" onClick={this.goToSection('showcase')}><img className="Content__skipper" role="presentation" src={longArrowDown} /></a>
             </p>
           </section>
           <section className="Content__section Content__section--showcase">

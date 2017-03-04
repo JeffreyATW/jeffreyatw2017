@@ -1,17 +1,9 @@
 .Content {
-  &__backgrounds,
-  &__background {
+  &__backgrounds {
     height: 50vh;
     position: fixed;
     width: 100%;
-  }
-
-  &__backgrounds {
     z-index: -1;
-  }
-
-  &__background {
-    background: lightgray;
   }
 
   &__sections {
@@ -20,7 +12,7 @@
     max-width: 1280px;
     padding: 0 1em;
   }
- 
+
   h1 {
     color: rgba(#d6d, .9);
     font-family: 'Arial Black', sans-serif;
@@ -61,15 +53,17 @@
     line-height: 1.5;
     margin: 0 auto;
     max-width: 1024px;
-    padding-top: 2em;
+    padding-top: 1.5em;
 
     span {
-      background: rgba(#fff, .9);
+      background: rgba(#fff, .75);
     }
   }
 
-  a {
-    color: inherit;
+  &__skipper {
+    height: 1em;
+    padding-left: .5em;
+    vertical-align: sub;
   }
 }
 
