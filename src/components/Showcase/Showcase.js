@@ -80,7 +80,9 @@ const Showcase = () => (
           <div className="Showcase__text">
             <h2 className="Showcase__heading"><a href={item.url} target="_blank">{item.name}</a></h2>
             <p className="Showcase__paragraph">
-              {item.description}
+              <span>
+                {item.description}
+              </span>
               {(i < items.length - 1) && (
                 <a href={`#${items[i + 1].id}`} onClick={goToSection(items[i + 1].id)}>
                   <img className="Showcase__skipper" alt="Next project" src={longArrowRight} />

@@ -79,11 +79,14 @@
   &__paragraph {
     line-height: 1.4;
     margin-top: 0;
+
+    > span {
+      padding-right: .5em;
+    }
   }
 
   &__skipper {
     height: 1em;
-    padding-left: .5em;
     vertical-align: text-top;
   }
 }
