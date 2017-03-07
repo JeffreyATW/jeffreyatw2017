@@ -14,7 +14,7 @@
   }
 
   h1 {
-    color: rgba(#d6d, .9);
+    color: #d6d;
     font-family: 'Arial Black', sans-serif;
     font-size: 4em;
     font-size: 8vmin;
@@ -29,11 +29,15 @@
         font-size: 6em;
         font-size: 15vmin;
       }
+
+      p {
+        margin-top: 1.5em;
+      }
     }
 
     &:last-child {
-      p {
-        height: 50vh;
+      .Content__text {
+        min-height: 0;
       }
     }
   }
@@ -46,14 +50,18 @@
     margin: 0;
   }
 
-  p {
+  &__text {
     font-family: serif;
     font-size: 1.5em;
-    height: 25vh;
+    min-height: 25vh;
     line-height: 1.5;
     margin: 0 auto;
     max-width: 1024px;
-    padding-top: 1.5em;
+    padding-top: 1em;
+
+    p {
+      margin: 0;
+    }
 
     span {
       background: rgba(#fff, .75);

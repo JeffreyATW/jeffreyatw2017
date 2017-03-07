@@ -1,0 +1,105 @@
+.Showcase {
+  font-family: sans-serif;
+  font-size: 1rem;
+  height: 50vh;
+  margin-top: 4em;
+
+  &__target {
+    position: relative;
+    left: -1em;
+  }
+
+  &__list {
+    background: rgba(lightgray, .75);
+    display: flex;
+    height: 100%;
+    list-style: none;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 1em;
+  }
+
+  &__image {
+    overflow: hidden;
+    height: 100%;
+
+    img {
+      height: 100%;
+      font-family: 'object-fit: cover;';
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-right: 1em;
+    width: 90%;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &--beats-music, &--lunch, &--stockpile {
+      img {
+        font-family: 'object-fit: cover; object-position: top;';
+        object-position: top;
+      }
+    }
+
+    &--mbfc-icon {
+      img {
+        font-family: 'object-fit: cover; object-position: top right;';
+        object-position: top right;
+      }
+    }
+  }
+
+  &__text {
+    padding: 0 1em;
+  }
+
+  &__heading {
+    margin: .5em 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__paragraph {
+    line-height: 1.4;
+    margin-top: 0;
+  }
+
+  &__skipper {
+    height: 1em;
+    padding-left: .5em;
+    vertical-align: text-top;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .Showcase {
+    &__item {
+      flex-direction: row;
+    }
+
+    &__text {
+      width: 25%;
+    }
+
+    &__image {
+      width: 75%;
+    }
+  }
+}
