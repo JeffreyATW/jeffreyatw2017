@@ -22,11 +22,12 @@
   }
 
   &__image {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    height: 100%;
 
     img {
-      height: 100%;
+      flex-grow: 1;
       font-family: 'object-fit: cover;';
       object-fit: cover;
       width: 100%;
