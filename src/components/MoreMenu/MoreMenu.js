@@ -56,13 +56,13 @@ class MoreMenu extends Component {
               <h2 className="MoreMenu__heading">Previous Site Versions</h2>
               <ol className="MoreMenu__versions">
                 <li>
-                  <a href="/v13/">13</a> (2010)
+                  <a href="/static/v13/">13</a> (2010)
                 </li>
                 <li>
-                  <a href="/v12/">12</a> (2007)
+                  <a href="/static/v12/">12</a> (2007)
                 </li>
                 <li>
-                  <a href="/v11/">11</a> (2005)
+                  <a href="/static/v11/">11</a> (2005)
                 </li>
                 <li>
                   <a href="http://www.livejournal.com/customview.cgi?styleid=565270&amp;user=jeffreyatw">10</a> (2005)
@@ -77,19 +77,19 @@ class MoreMenu extends Component {
                   <a href="http://www.livejournal.com/customview.cgi?styleid=419413&amp;user=jeffreyatw">7</a> (2004)
                 </li>
                 <li>
-                  <a href="/index_v6.shtml">6</a> (2003)
+                  <a href="/static/index_v6.shtml">6</a> (2003)
                 </li>
                 <li>
-                  <a href="/index_v5.shtml">5</a> (2005)
+                  <a href="/static/index_v5.shtml">5</a> (2005)
                 </li>
                 <li>
-                  <a href="/index_v4.shtml">4</a> (2002)
+                  <a href="/static/index_v4.shtml">4</a> (2002)
                 </li>
                 <li>
-                  <a href="/index_v3.shtml">3</a> (2002)
+                  <a href="/static/index_v3.shtml">3</a> (2002)
                 </li>
                 <li>
-                  <a href="/index_v2.shtml">2</a> (2002)
+                  <a href="/static/index_v2.shtml">2</a> (2002)
                 </li>
                 <li>
                   <a href="http://sentra.tripod.com">1</a> (2001)
