@@ -15,7 +15,7 @@
   .Backgrounds {
     position: fixed;
     right: 0;
-    top: -3.3em;
+    top: -47px;
     width: 100vw;
   }
 
@@ -46,6 +46,7 @@
     position: absolute;
     right: 0;
     text-align: right;
+    top: 47px;
 
     &--expanded {
       display: block;
@@ -73,10 +74,6 @@
 
     &__heading {
       margin-top: 0;
-    }
-
-    .Backgrounds {
-      top: -3.2em;
     }
   }
 }
