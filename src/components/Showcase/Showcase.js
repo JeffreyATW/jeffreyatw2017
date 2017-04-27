@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import smoothScroll from 'smoothscroll';
 import beatsMusic from './beats-music.jpg';
 import bim360Plan from './bim-360-plan.jpg';
@@ -6,7 +6,8 @@ import jeffreyAndAnna from './jeffrey-and-anna.jpg';
 import lunch from './lunch.jpg';
 import mbfcIcon from './mbfc-icon.jpg';
 import stockpile from './stockpile.jpg';
-import longArrowRight from '../../images/svg/long-arrow-right.svg';
+import arrowLeft from '../../images/svg/arrow-left.svg';
+import arrowRight from '../../images/svg/arrow-right.svg';
 import './Showcase.scss';
 
 const items = [
@@ -66,35 +67,82 @@ const items = [
   },
 ]
 
-const goToSection = section => (event) => {
+const goToItem = itemId => (event) => {
   event.preventDefault();
-  smoothScroll(document.querySelector(`.Showcase__target--${section}`), undefined, undefined, document.querySelector('.Showcase__list'), 'horizontal');
+  smoothScroll(document.querySelector(`.Showcase__target--${itemId}`), undefined, undefined, document.querySelector('.Showcase__list'), 'horizontal');
 };
 
-const Showcase = () => (
-  <div className="Showcase">
-    <ul className="Showcase__list">
-      {items.map((item, i) => (
-        <li className={`Showcase__item Showcase__item--${item.id}`} id={item.id} key={item.id}>
-          <div className={`Showcase__target Showcase__target--${item.id}`} />
-          <div className="Showcase__text">
-            <h2 className="Showcase__heading"><a href={item.url} target="_blank">{item.name}</a></h2>
-            <p className="Showcase__paragraph">
-              <span>
-                {item.description}
-              </span>
-              {(i < items.length - 1) && (
-                <a href={`#${items[i + 1].id}`} onClick={goToSection(items[i + 1].id)}>
-                  <img className="Showcase__skipper" alt="Next project" src={longArrowRight} />
-                </a>
-              )}
-            </p>
-          </div>
-          <a className="Showcase__image" href={item.url} target="_blank"><img src={item.image} alt={item.name} /></a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+class Showcase extends Component {
+  state = {
+    currentItem: 0
+  };
+
+  componentDidMount() {
+    const context = document.querySelector(`.Showcase__list`);
+    items.forEach((item, i) => {
+      const element = document.querySelector(`.Showcase__item--${item.id}`);
+
+      new window.Waypoint({
+        context,
+        element,
+        handler: (direction) => {
+          if (direction === 'right') {
+            this.setItem(i);
+          }
+        },
+        horizontal: true,
+        offset: 'right-in-view'
+      });
+
+      new window.Waypoint({
+        context,
+        element,
+        handler: (direction) => {
+          if (direction === 'left') {
+            this.setItem(i);
+          }
+        },
+        horizontal: true
+      });
+    });
+  }
+
+  setItem = (i) => {
+    this.setState({
+      currentItem: i
+    });
+  }
+
+  render() {
+    const { currentItem } = this.state;
+
+    return (
+      <div className="Showcase">
+        <ul className="Showcase__list">
+          {items.map((item, i) => (
+            <li className={`Showcase__item Showcase__item--${item.id}`} id={item.id} key={item.id}>
+              <div className={`Showcase__target Showcase__target--${item.id}`} />
+              <div className="Showcase__text">
+                <h2 className="Showcase__heading"><a href={item.url} target="_blank">{item.name}</a></h2>
+                <p className="Showcase__paragraph">
+                  <span>
+                    {item.description}
+                  </span>
+                </p>
+              </div>
+              <a className="Showcase__image" href={item.url} target="_blank"><img src={item.image} alt={item.name} /></a>
+            </li>
+          ))}
+        </ul>
+        {items[currentItem - 1] && <a href={`#${items[currentItem - 1].id}`} onClick={goToItem(items[currentItem - 1].id)}>
+          <img className="Showcase__prev" alt="Previous project" src={arrowLeft} />
+        </a>}
+        {items[currentItem + 1] && <a href={`#${items[currentItem + 1].id}`} onClick={goToItem(items[currentItem + 1].id)}>
+          <img className="Showcase__next" alt="Next project" src={arrowRight} />
+        </a>}
+      </div>
+    );
+  }
+}
 
 export default Showcase;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'waypoints/lib/noframework.waypoints.js';
 import Content from '../Content/Content';
 import Header from '../Header/Header';
 import './App.scss';

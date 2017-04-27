@@ -2,9 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import Backgrounds from '../Backgrounds/Backgrounds';
 import Showcase from '../Showcase/Showcase';
 import smoothScroll from 'smoothscroll';
-import longArrowDown from '../../images/svg/long-arrow-down.svg';
+import arrowDown from '../../images/svg/arrow-down.svg';
 import { sections } from '../../constants';
-import 'waypoints/lib/noframework.waypoints.js';
 import './Content.scss';
 
 class Content extends Component {
@@ -65,8 +64,8 @@ class Content extends Component {
                   on the front-end side of things. I've been making websites since 1994,
                   and I've always worked hard to stay on the cutting edge.
                 </span>
-                <a href="#sites" onClick={this.goToSection('sites')}><img className="Content__skipper" alt="Next section" src={longArrowDown} /></a>
               </p>
+              <a href="#sites" onClick={this.goToSection('sites')}><img className="Content__skipper" alt="Next section" src={arrowDown} /></a>
             </div>
           </section>
           <section className="Content__section Content__section--sites">
@@ -81,8 +80,8 @@ class Content extends Component {
                   design game on point, as I am building performant single-page apps comprising
                   thousands of components. If it's web-based, I'm on it.
                 </span>
-                <a href="#css" onClick={this.goToSection('css')}><img className="Content__skipper" alt="Next section" src={longArrowDown} /></a>
               </p>
+              <a href="#css" onClick={this.goToSection('css')}><img className="Content__skipper" alt="Next section" src={arrowDown} /></a>
             </div>
           </section>
           <section className="Content__section Content__section--css">
@@ -98,8 +97,8 @@ class Content extends Component {
                   guess I'm in the minority of people who do! (The trick is to stick to
                   object-oriented naming conventions and use CSS processors.)
                 </span>
-                <a href="#opinionated" onClick={this.goToSection('opinionated')}><img className="Content__skipper" alt="Next section" src={longArrowDown} /></a>
               </p>
+              <a href="#opinionated" onClick={this.goToSection('opinionated')}><img className="Content__skipper" alt="Next section" src={arrowDown} /></a>
             </div>
           </section>
           <section className="Content__section Content__section--opinionated">
@@ -116,8 +115,8 @@ class Content extends Component {
                   &ldquo;sub-optimal&rdquo;. I'm all about doing good work, as correctly as
                   possible, without sacrificing velocity.
                 </span>
-                <a href="#teaching" onClick={this.goToSection('teaching')}><img className="Content__skipper" alt="Next section" src={longArrowDown} /></a>
               </p>
+              <a href="#teaching" onClick={this.goToSection('teaching')}><img className="Content__skipper" alt="Next section" src={arrowDown} /></a>
             </div>
           </section>
           <section className="Content__section Content__section--teaching">
@@ -137,8 +136,8 @@ class Content extends Component {
                   own work, I make sure that my clients and coworkers are on the same page,
                   whether it's during a simple pull request, or a project sign-off.
                 </span>
-                <a href="#showcase" onClick={this.goToSection('showcase')}><img className="Content__skipper" alt="Next section" src={longArrowDown} /></a>
               </p>
+              <a href="#showcase" onClick={this.goToSection('showcase')}><img className="Content__skipper" alt="Next section" src={arrowDown} /></a>
             </div>
           </section>
           <section className="Content__section Content__section--showcase">
