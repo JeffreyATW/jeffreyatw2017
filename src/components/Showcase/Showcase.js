@@ -24,7 +24,7 @@ const items = [
     name: 'Lunch',
     description: `I wrote this React/Redux app to help the Lab Zero team decide on where to
     go for lunch. A helpful-yet-garish little tool that we use every day!`,
-    url: 'https://lunch.labzero.com/',
+    url: 'https://lunch.pink',
     image: lunch,
   },
   {
