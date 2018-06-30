@@ -6,7 +6,7 @@ import objectFitImages from 'object-fit-images';
 
 objectFitImages();
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <App />,
   document.getElementById('root')
 );

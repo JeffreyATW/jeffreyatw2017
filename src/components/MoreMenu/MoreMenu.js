@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Backgrounds from '../Backgrounds/Backgrounds';
 import './MoreMenu.scss';
 import envelopeSquare from '../../images/svg/envelope-square.svg';

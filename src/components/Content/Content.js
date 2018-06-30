@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Backgrounds from '../Backgrounds/Backgrounds';
 import Showcase from '../Showcase/Showcase';
 import smoothScroll from 'smoothscroll';

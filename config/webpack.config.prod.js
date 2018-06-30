@@ -1,14 +1,15 @@
+var fs = require('fs');
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ejs = require('ejs');
+var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-var url = require('url');
 var paths = require('./paths');
 var getClientEnvironment = require('./env');
 
-
+var template = ejs.compile(fs.readFileSync(paths.appHtml, 'utf-8'));
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -51,10 +52,13 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: 'source-map',
   // In production, we only want to load the polyfills and the app code.
-  entry: [
-    require.resolve('./polyfills'),
-    paths.appIndexJs
-  ],
+  entry: {
+    bundle: paths.appHtmlJs,
+    main: [
+      require.resolve('./polyfills'),
+      paths.appIndexJs
+    ],
+  },
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -63,6 +67,7 @@ module.exports = {
     // We don't currently advertise code splitting but Webpack supports it.
     filename: 'built/js/[name].[chunkhash:8].js',
     chunkFilename: 'built/js/[name].[chunkhash:8].chunk.js',
+    libraryTarget: 'umd',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath
   },
@@ -186,7 +191,17 @@ module.exports = {
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
-    new HtmlWebpackPlugin({
+    new StaticSiteGeneratorPlugin({
+      entry: 'bundle',
+      globals: {
+        document: {},
+        window: {},
+      },
+      locals: {
+        template,
+      },
+    }),
+    /* new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
       minify: {
@@ -201,7 +216,7 @@ module.exports = {
         minifyCSS: true,
         minifyURLs: true
       }
-    }),
+    }), */
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
