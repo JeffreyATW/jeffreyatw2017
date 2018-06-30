@@ -57,7 +57,7 @@ const items = [
     description: (
       <span>
         I created a scraper and a browser extension
-        for <a href="https://mediabiasfactcheck.com/" target="_blank">
+        for <a href="https://mediabiasfactcheck.com/" rel="noopener noreferrer" target="_blank">
           Media Bias Fact Check
         </a>, so you can easily see if what you're reading is complete garbage!
       </span>
@@ -123,14 +123,14 @@ class Showcase extends Component {
             <li className={`Showcase__item Showcase__item--${item.id}`} id={item.id} key={item.id}>
               <div className={`Showcase__target Showcase__target--${item.id}`} />
               <div className="Showcase__text">
-                <h2 className="Showcase__heading"><a href={item.url} target="_blank">{item.name}</a></h2>
+                <h2 className="Showcase__heading"><a href={item.url} rel="noopener noreferrer" target="_blank">{item.name}</a></h2>
                 <p className="Showcase__paragraph">
                   <span>
                     {item.description}
                   </span>
                 </p>
               </div>
-              <a className="Showcase__image" href={item.url} target="_blank"><img src={item.image} alt={item.name} /></a>
+              <a className="Showcase__image" href={item.url} rel="noopener noreferrer" target="_blank"><img src={item.image} alt={item.name} /></a>
             </li>
           ))}
         </ul>
