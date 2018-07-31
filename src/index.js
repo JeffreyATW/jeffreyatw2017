@@ -12,4 +12,3 @@ ReactDOM.hydrate(
   <App />,
   document.getElementById('root')
 );
-registerServiceWorker();
