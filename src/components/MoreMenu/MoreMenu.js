@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Backgrounds from '../Backgrounds/Backgrounds';
-import './MoreMenu.scss';
-import envelopeSquare from '../../images/svg/envelope-square.svg';
-import facebookOfficial from '../../images/svg/facebook-official.svg';
-import github from '../../images/svg/github.svg';
-import tumblr from '../../images/svg/tumblr.svg';
-import twitter from '../../images/svg/twitter.svg';
-import wordpress from '../../images/svg/wordpress.svg';
-import ellipsisV from '../../images/svg/ellipsis-v.svg';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Backgrounds from "../Backgrounds/Backgrounds";
+import "./MoreMenu.scss";
+import envelopeSquare from "../../images/svg/envelope-square.svg";
+import facebookOfficial from "../../images/svg/facebook-official.svg";
+import github from "../../images/svg/github.svg";
+import twitch from "../../images/svg/twitch.svg";
+import twitter from "../../images/svg/twitter.svg";
+import wordpress from "../../images/svg/wordpress.svg";
+import ellipsisV from "../../images/svg/ellipsis-v.svg";
 
 class MoreMenu extends Component {
   static propTypes = {
-    currentSection: PropTypes.number.isRequired
+    currentSection: PropTypes.number.isRequired,
   };
 
   state = {
-    expanded: false
+    expanded: false,
   };
 
   toggle = () => {
     this.setState({ expanded: !this.state.expanded });
-  }
+  };
 
   render() {
     const { currentSection } = this.props;
@@ -29,29 +29,55 @@ class MoreMenu extends Component {
 
     return (
       <div className="MoreMenu">
-        <button className="MoreMenu__toggler" onClick={this.toggle} aria-haspopup="true" aria-controls="MoreMenu__dropdown"><img src={ellipsisV} alt="More..." /></button>
-        <div id="MoreMenu__dropdown" className={`MoreMenu__dropdown ${expanded ? 'MoreMenu__dropdown--expanded' : ''}`} aria-hidden={!expanded} aria-label="submenu">
+        <button
+          className="MoreMenu__toggler"
+          onClick={this.toggle}
+          aria-haspopup="true"
+          aria-controls="MoreMenu__dropdown"
+        >
+          <img src={ellipsisV} alt="More..." />
+        </button>
+        <div
+          id="MoreMenu__dropdown"
+          className={`MoreMenu__dropdown ${
+            expanded ? "MoreMenu__dropdown--expanded" : ""
+          }`}
+          aria-hidden={!expanded}
+          aria-label="submenu"
+        >
           <div className="MoreMenu__backgrounds">
             <Backgrounds currentSection={currentSection} />
           </div>
           <ul className="MoreMenu__list">
             <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="https://twitter.com/JeffreyATW"><img src={twitter} alt="Twitter" /></a>
+              <a href="https://twitter.com/JeffreyATW">
+                <img src={twitter} alt="Twitter" />
+              </a>
             </li>
             <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="http://jeffreyatw.tumblr.com/"><img src={tumblr} alt="Tumblr" /></a>
+              <a href="https://www.facebook.com/jeffreyatw">
+                <img src={facebookOfficial} alt="Facebook" />
+              </a>
             </li>
             <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="https://www.facebook.com/jeffreyatw"><img src={facebookOfficial} alt="Facebook" /></a>
+              <a href="https://twitch.tv/jeffreyatw">
+                <img src={twitch} alt="Twitch" />
+              </a>
             </li>
             <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="https://github.com/JeffreyATW"><img src={github} alt="GitHub" /></a>
+              <a href="https://github.com/JeffreyATW">
+                <img src={github} alt="GitHub" />
+              </a>
             </li>
             <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="http://jeffreyatw.com/blog"><img src={wordpress} alt="Blog" /></a>
+              <a href="http://jeffreyatw.com/blog">
+                <img src={wordpress} alt="Blog" />
+              </a>
             </li>
             <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="mailto:jeffreyatw@gmail.com"><img src={envelopeSquare} alt="Email" /></a>
+              <a href="mailto:jeffreyatw@gmail.com">
+                <img src={envelopeSquare} alt="Email" />
+              </a>
             </li>
             <li>
               <h2 className="MoreMenu__heading">Previous Site Versions</h2>
@@ -66,16 +92,28 @@ class MoreMenu extends Component {
                   <a href="/static/v11/">11</a> (2005)
                 </li>
                 <li>
-                  <a href="http://www.livejournal.com/customview.cgi?styleid=565270&amp;user=jeffreyatw">10</a> (2005)
+                  <a href="http://www.livejournal.com/customview.cgi?styleid=565270&amp;user=jeffreyatw">
+                    10
+                  </a>{" "}
+                  (2005)
                 </li>
                 <li>
-                  <a href="http://www.livejournal.com/customview.cgi?styleid=497465&amp;user=jeffreyatw">9</a> (2004)
+                  <a href="http://www.livejournal.com/customview.cgi?styleid=497465&amp;user=jeffreyatw">
+                    9
+                  </a>{" "}
+                  (2004)
                 </li>
                 <li>
-                  <a href="http://www.livejournal.com/customview.cgi?styleid=481429&amp;user=jeffreyatw">8</a> (2004)
+                  <a href="http://www.livejournal.com/customview.cgi?styleid=481429&amp;user=jeffreyatw">
+                    8
+                  </a>{" "}
+                  (2004)
                 </li>
                 <li>
-                  <a href="http://www.livejournal.com/customview.cgi?styleid=419413&amp;user=jeffreyatw">7</a> (2004)
+                  <a href="http://www.livejournal.com/customview.cgi?styleid=419413&amp;user=jeffreyatw">
+                    7
+                  </a>{" "}
+                  (2004)
                 </li>
                 <li>
                   <a href="/static/index_v6.shtml">6</a> (2003)
