@@ -8,6 +8,7 @@ import twitter from "@/public/images/svg/twitter.svg";
 import wordpress from "@/public/images/svg/wordpress.svg";
 import ellipsisV from "@/public/images/svg/ellipsis-v.svg";
 import Image from "next/image";
+import { links } from "@/constants";
 
 export default function MoreMenu({ currentSection }: { currentSection: number }) {
   const [expanded, setExpanded] = useState(false);
@@ -38,36 +39,11 @@ export default function MoreMenu({ currentSection }: { currentSection: number })
             <Backgrounds currentSection={currentSection} />
           </div>
           <ul className="MoreMenu__list">
-            <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="https://twitter.com/JeffreyATW">
-                <Image src={twitter} alt="Twitter" width={28} height={28} />
+            {links.map(link => <li className="MoreMenu__item MoreMenu__item--mobile" key={link.name}>
+              <a href={link.url}>
+                <Image src={link.icon} alt={link.name} title={link.name} width={28} height={28} />
               </a>
-            </li>
-            <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="https://www.facebook.com/jeffreyatw">
-                <Image src={facebookOfficial} alt="Facebook" width={28} height={28} />
-              </a>
-            </li>
-            <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="https://twitch.tv/jeffreyatw">
-                <Image src={twitch} alt="Twitch" width={28} height={28} />
-              </a>
-            </li>
-            <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="https://github.com/JeffreyATW">
-                <Image src={github} alt="GitHub" width={28} height={28} />
-              </a>
-            </li>
-            <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="http://jeffreyatw.com/blog">
-                <Image src={wordpress} alt="Blog" width={28} height={28} />
-              </a>
-            </li>
-            <li className="MoreMenu__item MoreMenu__item--mobile">
-              <a href="mailto:jeffreyatw@gmail.com">
-                <Image src={envelopeSquare} alt="Email" width={28} height={28} />
-              </a>
-            </li>
+            </li>)}
             <li>
               <h2 className="MoreMenu__heading">Previous Site Versions</h2>
               <ol className="MoreMenu__versions">
