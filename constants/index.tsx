@@ -1,5 +1,4 @@
 
-import cohost from "@/public/images/svg/cohost.svg";
 import envelopeSquare from "@/public/images/svg/envelope-square.svg";
 import github from "@/public/images/svg/github.svg";
 import twitch from "@/public/images/svg/twitch.svg";
@@ -15,10 +14,6 @@ export const sections = [
 ];
 
 export const links = [{
-  name: "cohost",
-  icon: cohost,
-  url: "https://cohost.org/JeffreyATW"
-}, {
   name: "Twitch",
   icon: twitch,
   url: "https://twitch.tv/jeffreyatw",
