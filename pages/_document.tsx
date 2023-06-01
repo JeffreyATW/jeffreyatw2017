@@ -1,9 +1,24 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 export default function Document() {
   return (
     <Html>
       <Head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TMZ5D1VQVD"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-TMZ5D1VQVD');
+          `}
+        </Script>
         <meta content="Jeffrey Carl Faden's personal website." name="Description" />
         <meta content="Jeffrey Carl Faden" name="author" />
         <meta
