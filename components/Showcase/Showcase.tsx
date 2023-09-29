@@ -1,10 +1,10 @@
 import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
-import beatsMusic from './beats-music.jpg';
-import bim360Plan from './bim-360-plan.jpg';
-import jeffreyAndAnna from './jeffrey-and-anna.jpg';
-import lunch from './lunch.jpg';
-import mbfcIcon from './mbfc-icon.jpg';
-import stockpile from './stockpile.jpg';
+import beatsMusic from './beats-music.webp';
+import bim360Plan from './bim-360-plan.webp';
+import jeffreyAndAnna from './jeffrey-and-anna.webp';
+import lunch from './lunch.webp';
+import mbfcIcon from './mbfc-icon.webp';
+import stockpile from './stockpile.webp';
 import arrowLeft from '@/public/images/svg/arrow-left.svg';
 import arrowRight from '@/public/images/svg/arrow-right.svg';
 import Image from 'next/image';
