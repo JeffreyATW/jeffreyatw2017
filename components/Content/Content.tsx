@@ -58,7 +58,7 @@ export default function Content({ currentSection, setSection }: { currentSection
             <div className="Content__text">
               <p>
                 <span>
-                  I’m a software engineer at <a href="https://labzero.com">Lab Zero</a>.
+                  I’m a senior software engineer at <a href="https://labzero.com">Lab Zero</a>.
                   I enjoy taking the helm of development of web-based apps, particularly
                   on the front-end side of things. I’ve been making websites since 1994,
                   and I’ve always worked hard to stay on the cutting edge.
