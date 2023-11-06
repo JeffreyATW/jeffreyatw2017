@@ -80,23 +80,6 @@ export default function Content({ currentSection, setSection }: { currentSection
                   thousands of components. If it’s web-based, I’m on it.
                 </span>
               </p>
-              <a href="#css" onClick={goToSection('css')}><Image className="Content__skipper" alt="Next section" src={arrowDown} width={48} height={48} /></a>
-            </div>
-          </section>
-          <section className="Content__section Content__section--css">
-            <h1>
-              <span>CSS is good, actually.</span>
-            </h1>
-            <div className="Content__text">
-              <p>
-                <span>
-                  You know that <abbr title="jif">GIF</abbr> of the funny cartoon man screwing
-                  up those window blinds with the text &ldquo;CSS&rdquo; on the bottom? Not
-                  particularly funny or true, especially if you know what you’re doing! And I
-                  guess I’m in the minority of people who do! (The trick is to stick to
-                  object-oriented naming conventions and use CSS processors.)
-                </span>
-              </p>
               <a href="#opinionated" onClick={goToSection('opinionated')}><Image className="Content__skipper" alt="Next section" src={arrowDown} width={48} height={48} /></a>
             </div>
           </section>

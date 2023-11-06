@@ -7,7 +7,6 @@ import wordpress from "@/public/images/svg/wordpress.svg";
 export const sections = [
   'intro',
   'sites',
-  'css',
   'opinionated',
   'teaching',
   'showcase'

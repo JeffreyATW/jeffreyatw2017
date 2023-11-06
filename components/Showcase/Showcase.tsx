@@ -1,22 +1,30 @@
 import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
-import beatsMusic from './beats-music.webp';
+import kindred from './kindred.webp';
 import bim360Plan from './bim-360-plan.webp';
 import jeffreyAndAnna from './jeffrey-and-anna.webp';
 import lunch from './lunch.webp';
 import mbfcIcon from './mbfc-icon.webp';
-import stockpile from './stockpile.webp';
+import speed from './speed.webp';
 import arrowLeft from '@/public/images/svg/arrow-left.svg';
 import arrowRight from '@/public/images/svg/arrow-right.svg';
 import Image from 'next/image';
 
 const items = [
   {
-    id: 'beats-music',
-    name: 'Beats Music Website',
-    description: `Lab Zero worked with Beats to quickly release the marketing site for their
-    short-lived streaming service. I wrote the majority of the HTML/CSS!`,
-    url: 'https://labzero.com/projects/beats-music',
-    image: beatsMusic,
+    id: 'kindred',
+    name: 'Kindred',
+    description: `I was the sole front-end developer for this Next.js-based blueprinting app for an
+    electric car company. Worked closely with design and API devs to make an intuitive tool!`,
+    url: 'https://labzero.com/case-studies/kindred',
+    image: kindred,
+  },
+  {
+    id: 'speed',
+    name: 'How We Gave a Redux-powered React App a Speed Boost',
+    description: `A deep-dive blog post about the improvements we made to a long-lived React and
+    Redux app. Includes some industry-standard, but also less conventional, approaches.`,
+    url: 'https://labzero.com/blog/how-we-gave-a-redux-powered-react-app-a-speed-boost',
+    image: speed,
   },
   {
     id: 'lunch',
@@ -35,22 +43,6 @@ const items = [
     image: bim360Plan,
   },
   {
-    id: 'jeffrey-and-anna',
-    name: 'Jeffrey and Anna',
-    description: `I made this super scrolling website originally for guests to RSVP to our
-    wedding, but now it's become somewhat of a home base for our growing family.`,
-    url: 'http://jeffreyandanna.us/',
-    image: jeffreyAndAnna,
-  },
-  {
-    id: 'stockpile',
-    name: 'Stockpile',
-    description: `Stockpile brought Lab Zero on-board to help with a refresh of their onboarding
-    and account management flow. Fun flexbox shenanigans at all screen dimensions.`,
-    url: 'https://labzero.com/projects/stockpile',
-    image: stockpile,
-  },
-  {
     id: 'mbfc-icon',
     name: 'MBFC Icon',
     description: (
@@ -63,6 +55,14 @@ const items = [
     ),
     url: 'http://jeffreyatw.com/blog/2016/11/check-news-bias-with-a-simple-browser-icon/',
     image: mbfcIcon,
+  },
+  {
+    id: 'jeffrey-and-anna',
+    name: 'Jeffrey and Anna',
+    description: `I made this super scrolling website originally for guests to RSVP to our
+    wedding, but now it's become somewhat of a home base for our growing family.`,
+    url: 'http://jeffreyandanna.us/',
+    image: jeffreyAndAnna,
   },
 ]
 

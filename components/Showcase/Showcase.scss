@@ -30,7 +30,6 @@
 
     img {
       flex-grow: 1;
-      font-family: 'object-fit: cover;';
       object-fit: cover;
       width: 100%;
     }
@@ -48,16 +47,16 @@
       margin: 0;
     }
 
-    &--beats-music, &--lunch, &--stockpile {
+    &--kindred, &--lunch {
       img {
-        font-family: 'object-fit: cover; object-position: top;';
+        object-fit: cover;
         object-position: top;
       }
     }
 
     &--mbfc-icon {
       img {
-        font-family: 'object-fit: cover; object-position: top right;';
+        object-fit: cover;
         object-position: top right;
       }
     }
