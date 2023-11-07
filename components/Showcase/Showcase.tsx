@@ -12,7 +12,7 @@ import Image from 'next/image';
 const items = [
   {
     id: 'kindred',
-    name: 'Kindred',
+    name: 'Kindred Blueprints App',
     description: `I was the sole front-end developer for this Next.js-based blueprinting app for an
     electric car company. Worked closely with design and API devs to make an intuitive tool!`,
     url: 'https://labzero.com/case-studies/kindred',
