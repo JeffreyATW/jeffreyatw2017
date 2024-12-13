@@ -32,5 +32,5 @@ export const links = [{
 }, {
   name: "Email",
   icon: envelopeSquare,
-  url: "mailto:jeffreyatw@gmail.com"
+  url: "mailto:jeffreyatw@jeffreyatw.com"
 }]
