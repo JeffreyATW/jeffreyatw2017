@@ -58,7 +58,7 @@ export default function Content({ currentSection, setSection }: { currentSection
             <div className="Content__text">
               <p>
                 <span>
-                  I’m a senior software engineer at Apple.
+                  I’m a lead software engineer at Salesforce.
                   I enjoy taking the helm of development of web-based apps, particularly
                   on the front-end side of things. I’ve been making websites since 1994,
                   and I’ve always worked hard to stay on the cutting edge.
