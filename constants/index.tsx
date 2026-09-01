@@ -1,4 +1,5 @@
 
+import bluesky from "@/public/images/svg/bluesky.svg";
 import envelopeSquare from "@/public/images/svg/envelope-square.svg";
 import github from "@/public/images/svg/github.svg";
 import twitch from "@/public/images/svg/twitch.svg";
@@ -21,6 +22,10 @@ export const links = [{
   name: "LinkedIn",
   icon: linkedin,
   url: "https://www.linkedin.com/in/jeffreycarlfaden/",
+}, {
+  name: "Bluesky",
+  icon: bluesky,
+  url: "https://bsky.app/profile/jeffreyatw.com",
 }, {
   name: "Twitch",
   icon: twitch,
